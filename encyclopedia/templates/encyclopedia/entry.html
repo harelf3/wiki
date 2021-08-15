@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+{% load static %}
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+    {% if exsists == 1 %}
+    {{content|safe}}
+    {% elif  exsists == 0 %}
+
+    <div style=" text-align: center;" ><h1 style="text-align: center;">{{title}} does not exsists</h1>
+    <p >  <a href="{% url 'make' %}">try making it </a></p>
+    <img src="{% static 'encyclopedia/error.png' %}" alt="fuk" height="575px" width="1250px">
+    </div>
+    {% endif %}
+    
+{% endblock %}
