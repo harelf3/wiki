@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>Add A New Entry</h1>
+    <div style="float:left;margin-right:20px;">
+    <form action="make" method="post">
+        {% csrf_token %}
+        {{ form1 }}
+        <input class= "btn btn-primary" type="submit" value="Submit">
+    </form>
+    </div>
+
+{% endblock %}
